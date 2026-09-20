@@ -1,0 +1,92 @@
+{
+  "n_seeds": 50,
+  "per_subsystem": {
+    "sub_ghz": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "tp": 50,
+      "fp": 0,
+      "fn": 0,
+      "tn": 750,
+      "label": "Sub-GHz radio"
+    },
+    "nfc": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "tp": 150,
+      "fp": 0,
+      "fn": 0,
+      "tn": 650,
+      "label": "NFC / RFID coil"
+    },
+    "ir_tx": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "tp": 50,
+      "fp": 0,
+      "fn": 0,
+      "tn": 750,
+      "label": "IR transmitter"
+    },
+    "ir_rx": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "tp": 150,
+      "fp": 0,
+      "fn": 0,
+      "tn": 650,
+      "label": "IR receiver"
+    },
+    "gpio": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "tp": 50,
+      "fp": 0,
+      "fn": 0,
+      "tn": 750,
+      "label": "GPIO pins"
+    },
+    "sd": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "tp": 200,
+      "fp": 0,
+      "fn": 0,
+      "tn": 600,
+      "label": "SD card"
+    },
+    "battery": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "tp": 150,
+      "fp": 0,
+      "fn": 0,
+      "tn": 650,
+      "label": "Battery"
+    },
+    "buttons": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "tp": 50,
+      "fp": 0,
+      "fn": 0,
+      "tn": 750,
+      "label": "Buttons / D-pad"
+    }
+  },
+  "false_alarm_rate_healthy": 0.0,
+  "honesty_coverage": {
+    "total": 9,
+    "self_contained": 8,
+    "needs_accessory": 1,
+    "confidence_labeled": 9
+  }
+}

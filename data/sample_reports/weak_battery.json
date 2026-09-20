@@ -1,0 +1,145 @@
+{
+  "device": "Flipper Zero",
+  "firmware": "sim",
+  "mode": "full",
+  "timestamp": "2026-09-19 14:22 UTC",
+  "report_id": "FD-0FFC-4C49",
+  "overall": "FAIL",
+  "overall_label": "FAULT DETECTED",
+  "counts": {
+    "PASS": 7,
+    "RESPONDS": 1,
+    "WARN": 0,
+    "INCONCLUSIVE": 0,
+    "FAIL": 1
+  },
+  "results": [
+    {
+      "subsystem": "sub_ghz",
+      "label": "Sub-GHz radio",
+      "status": "PASS",
+      "confidence": "high",
+      "message": "Radio responds and TX->RX self-loopback succeeded.",
+      "guidance": "",
+      "needs_accessory": false,
+      "readings": {
+        "responds": true,
+        "chip_id": "CC1101",
+        "loopback_supported": true,
+        "loopback_ok": true,
+        "rssi_dbm": -73.9
+      }
+    },
+    {
+      "subsystem": "nfc",
+      "label": "NFC / RFID coil",
+      "status": "RESPONDS",
+      "confidence": "medium",
+      "message": "NFC field detected \u2014 the coil is energizing.",
+      "guidance": "This proves the coil is driving a field. It does NOT prove every card type will read; some cards are simply unsupported. For a stronger check, present a known reference card.",
+      "needs_accessory": false,
+      "readings": {
+        "responds": true,
+        "chip_id": "ST25R3916",
+        "field_amplitude": 12
+      }
+    },
+    {
+      "subsystem": "ir_tx",
+      "label": "IR transmitter",
+      "status": "PASS",
+      "confidence": "high",
+      "message": "IR transmitter emitted the test pattern.",
+      "guidance": "",
+      "needs_accessory": false,
+      "readings": {
+        "emitted": true
+      }
+    },
+    {
+      "subsystem": "ir_rx",
+      "label": "IR receiver",
+      "status": "PASS",
+      "confidence": "high",
+      "message": "IR receiver captured the emitted pattern (self-loopback).",
+      "guidance": "",
+      "needs_accessory": false,
+      "readings": {
+        "loopback_supported": true,
+        "loopback_match_ratio": 0.98,
+        "ir_tx_ok": true
+      }
+    },
+    {
+      "subsystem": "gpio",
+      "label": "GPIO pins",
+      "status": "PASS",
+      "confidence": "high",
+      "message": "GPIO loopback jumper test passed.",
+      "guidance": "",
+      "needs_accessory": true,
+      "readings": {
+        "self_check_ok": true,
+        "jumper_present": true,
+        "jumper_loopback_ok": true
+      }
+    },
+    {
+      "subsystem": "sd",
+      "label": "SD card",
+      "status": "PASS",
+      "confidence": "high",
+      "message": "SD card reads and writes cleanly.",
+      "guidance": "",
+      "needs_accessory": false,
+      "readings": {
+        "detected": true,
+        "write_read_match": true,
+        "bad_sectors": 0,
+        "free_ratio": 0.32,
+        "capacity_mb": 16384
+      }
+    },
+    {
+      "subsystem": "battery",
+      "label": "Battery",
+      "status": "FAIL",
+      "confidence": "high",
+      "message": "Battery voltage 3.15 V is out of the safe range.",
+      "guidance": "Charge fully and re-run. A persistently out-of-range voltage can indicate a failing cell or fuel-gauge.",
+      "needs_accessory": false,
+      "readings": {
+        "voltage_v": 3.15,
+        "health_pct": 40,
+        "charging": false,
+        "charge_current_ma": 0.0
+      }
+    },
+    {
+      "subsystem": "buttons",
+      "label": "Buttons / D-pad",
+      "status": "PASS",
+      "confidence": "high",
+      "message": "Buttons / D-pad: all inputs/outputs confirmed by the user.",
+      "guidance": "",
+      "needs_accessory": false,
+      "readings": {
+        "interactive": true,
+        "user_confirmed": true
+      }
+    },
+    {
+      "subsystem": "display",
+      "label": "Display / LED / vibro",
+      "status": "PASS",
+      "confidence": "high",
+      "message": "Display / LED / vibro: all inputs/outputs confirmed by the user.",
+      "guidance": "",
+      "needs_accessory": false,
+      "readings": {
+        "interactive": true,
+        "user_confirmed": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+# FlipDoctor — Flipper Zero application manifest (ufbt-buildable).
+# Sole author: Krishita Sanjay Choksi.
+
+App(
+    appid="flipdoctor",
+    name="FlipDoctor",
+    apptype=FlipAppType.EXTERNAL,
+    entry_point="flipdoctor_app",
+    stack_size=4 * 1024,
+    fap_category="Tools",
+    fap_author="Krishita Sanjay Choksi",
+    fap_version="0.1",
+    fap_description="One-tap health & self-diagnostics: tests sub-GHz, NFC, IR, "
+    "GPIO, SD, battery and reports an honest pass/fail/warn/inconclusive verdict.",
+    fap_icon="src/flipper/flipdoctor_icon.png",
+    sources=[
+        "src/flipper/*.c",
+        "src/flipper/orchestrator/*.c",
+        "src/flipper/tests/*.c",
+        "src/flipper/evaluate/*.c",
+        "src/flipper/report/*.c",
+        "src/flipper/modes/*.c",
+    ],
+)

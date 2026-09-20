@@ -1,0 +1,48 @@
+{
+  "sub_ghz": {
+    "responds": true,
+    "chip_id": "CC1101",
+    "loopback_supported": true,
+    "loopback_ok": true,
+    "rssi_dbm": -73.9
+  },
+  "nfc": {
+    "responds": false,
+    "chip_id": "ST25R3916",
+    "field_amplitude": 0
+  },
+  "ir_tx": {
+    "emitted": true
+  },
+  "ir_rx": {
+    "loopback_supported": true,
+    "loopback_match_ratio": 0.0,
+    "ir_tx_ok": true
+  },
+  "gpio": {
+    "self_check_ok": true,
+    "jumper_present": true,
+    "jumper_loopback_ok": true
+  },
+  "sd": {
+    "detected": true,
+    "write_read_match": true,
+    "bad_sectors": 0,
+    "free_ratio": 0.32,
+    "capacity_mb": 16384
+  },
+  "battery": {
+    "voltage_v": 3.7,
+    "health_pct": 80,
+    "charging": false,
+    "charge_current_ma": 0.0
+  },
+  "buttons": {
+    "interactive": true,
+    "user_confirmed": true
+  },
+  "display": {
+    "interactive": true,
+    "user_confirmed": true
+  }
+}

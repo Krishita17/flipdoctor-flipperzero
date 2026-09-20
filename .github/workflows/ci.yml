@@ -1,0 +1,52 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    name: Core pipeline (sim + evaluator + report)
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.9", "3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Run the fault simulator from a clean clone
+        run: |
+          python sim/simulate.py --list
+          python sim/simulate.py --state healthy
+          python sim/simulate.py --state ir_rx_fail
+      - name: Run tests (evaluator catches faults, no false alarms)
+        run: pytest -q
+      - name: Run evaluator-accuracy eval
+        run: python eval/run_eval.py
+      - name: Regenerate figures (smoke test)
+        run: python figures/generate_figures.py
+
+  build-fap:
+    name: Build Flipper .fap (ufbt)
+    runs-on: ubuntu-latest
+    continue-on-error: true  # informational; core CI above is the gate
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install ufbt
+        run: python -m pip install --upgrade ufbt
+      - name: Build application
+        run: |
+          ufbt update
+          ufbt

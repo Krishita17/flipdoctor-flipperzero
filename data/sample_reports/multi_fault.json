@@ -1,0 +1,145 @@
+{
+  "device": "Flipper Zero",
+  "firmware": "sim",
+  "mode": "full",
+  "timestamp": "2026-09-19 14:22 UTC",
+  "report_id": "FD-B76D-354F",
+  "overall": "FAIL",
+  "overall_label": "FAULT DETECTED",
+  "counts": {
+    "PASS": 6,
+    "RESPONDS": 0,
+    "WARN": 1,
+    "INCONCLUSIVE": 0,
+    "FAIL": 2
+  },
+  "results": [
+    {
+      "subsystem": "sub_ghz",
+      "label": "Sub-GHz radio",
+      "status": "PASS",
+      "confidence": "high",
+      "message": "Radio responds and TX->RX self-loopback succeeded.",
+      "guidance": "",
+      "needs_accessory": false,
+      "readings": {
+        "responds": true,
+        "chip_id": "CC1101",
+        "loopback_supported": true,
+        "loopback_ok": true,
+        "rssi_dbm": -73.9
+      }
+    },
+    {
+      "subsystem": "nfc",
+      "label": "NFC / RFID coil",
+      "status": "FAIL",
+      "confidence": "high",
+      "message": "NFC front-end did not respond.",
+      "guidance": "The ST25R NFC chip is not answering. Re-run after a reboot; if it persists the NFC hardware likely needs service.",
+      "needs_accessory": false,
+      "readings": {
+        "responds": false,
+        "chip_id": "ST25R3916",
+        "field_amplitude": 0
+      }
+    },
+    {
+      "subsystem": "ir_tx",
+      "label": "IR transmitter",
+      "status": "PASS",
+      "confidence": "high",
+      "message": "IR transmitter emitted the test pattern.",
+      "guidance": "",
+      "needs_accessory": false,
+      "readings": {
+        "emitted": true
+      }
+    },
+    {
+      "subsystem": "ir_rx",
+      "label": "IR receiver",
+      "status": "FAIL",
+      "confidence": "high",
+      "message": "IR receiver captured nothing during self-loopback.",
+      "guidance": "The emitter works, so the fault is likely the IR receive photodiode. Retry in a dim room away from bright/IR light; if it still captures nothing, the receiver may need service. IR TX works but RX sees nothing. Commonly dust/obstruction over the receive window, or testing in bright IR-heavy light. Clean the window and retry in a dim room before assuming hardware failure.",
+      "needs_accessory": false,
+      "readings": {
+        "loopback_supported": true,
+        "loopback_match_ratio": 0.0,
+        "ir_tx_ok": true
+      }
+    },
+    {
+      "subsystem": "gpio",
+      "label": "GPIO pins",
+      "status": "PASS",
+      "confidence": "high",
+      "message": "GPIO loopback jumper test passed.",
+      "guidance": "",
+      "needs_accessory": true,
+      "readings": {
+        "self_check_ok": true,
+        "jumper_present": true,
+        "jumper_loopback_ok": true
+      }
+    },
+    {
+      "subsystem": "sd",
+      "label": "SD card",
+      "status": "PASS",
+      "confidence": "high",
+      "message": "SD card reads and writes cleanly.",
+      "guidance": "",
+      "needs_accessory": false,
+      "readings": {
+        "detected": true,
+        "write_read_match": true,
+        "bad_sectors": 0,
+        "free_ratio": 0.32,
+        "capacity_mb": 16384
+      }
+    },
+    {
+      "subsystem": "battery",
+      "label": "Battery",
+      "status": "WARN",
+      "confidence": "high",
+      "message": "Battery usable but not fresh (health ~80%, 3.70 V).",
+      "guidance": "Still works; expect shorter runtime than a new unit. This is normal aging, not a fault.",
+      "needs_accessory": false,
+      "readings": {
+        "voltage_v": 3.7,
+        "health_pct": 80,
+        "charging": false,
+        "charge_current_ma": 0.0
+      }
+    },
+    {
+      "subsystem": "buttons",
+      "label": "Buttons / D-pad",
+      "status": "PASS",
+      "confidence": "high",
+      "message": "Buttons / D-pad: all inputs/outputs confirmed by the user.",
+      "guidance": "",
+      "needs_accessory": false,
+      "readings": {
+        "interactive": true,
+        "user_confirmed": true
+      }
+    },
+    {
+      "subsystem": "display",
+      "label": "Display / LED / vibro",
+      "status": "PASS",
+      "confidence": "high",
+      "message": "Display / LED / vibro: all inputs/outputs confirmed by the user.",
+      "guidance": "",
+      "needs_accessory": false,
+      "readings": {
+        "interactive": true,
+        "user_confirmed": true
+      }
+    }
+  ]
+}

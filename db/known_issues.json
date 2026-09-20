@@ -1,0 +1,27 @@
+{
+  "_comment": "Community-contributed known-issue signatures. When a set of readings matches a signature, FlipDoctor can attach a more specific explanation. This is a Tier 3 feature; the format is intentionally simple so owners can contribute via PR.",
+  "_version": 1,
+  "signatures": [
+    {
+      "id": "ir-rx-dust",
+      "subsystem": "ir_rx",
+      "when": {"loopback_match_ratio_below": 0.3, "ir_tx_ok": true},
+      "note": "IR TX works but RX sees nothing. Commonly dust/obstruction over the receive window, or testing in bright IR-heavy light. Clean the window and retry in a dim room before assuming hardware failure.",
+      "contributed_by": "community"
+    },
+    {
+      "id": "sd-contact",
+      "subsystem": "sd",
+      "when": {"write_read_mismatch": true, "detected": true},
+      "note": "Card detected but read/write mismatches often mean dirty/oxidized contacts or a failing card. Try reseating or a different microSD card before concluding the slot is faulty.",
+      "contributed_by": "community"
+    },
+    {
+      "id": "battery-aged",
+      "subsystem": "battery",
+      "when": {"health_pct_below": 85, "voltage_ok": true},
+      "note": "Voltage nominal but reduced health is normal battery aging. Expect shorter runtime; not a fault.",
+      "contributed_by": "community"
+    }
+  ]
+}

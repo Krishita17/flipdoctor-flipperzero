@@ -1,0 +1,34 @@
+{
+  "_comment": "Pass/fail/warn thresholds for the FlipDoctor evaluator. Values are grounded in documented Flipper Zero hardware behavior (see docs/prior_art.md for citations) and calibrated against the author's own device. Community contributions of real-world thresholds are welcome (see README).",
+  "_version": 1,
+  "battery": {
+    "voltage_min_v": 3.30,
+    "voltage_nominal_min_v": 3.60,
+    "voltage_max_v": 4.25,
+    "health_fail_pct": 60,
+    "health_warn_pct": 85
+  },
+  "sd": {
+    "min_write_read_match": true,
+    "max_bad_sectors": 0,
+    "min_free_ratio": 0.02
+  },
+  "battery_charge": {
+    "expect_current_when_charging_ma": 5
+  },
+  "subghz": {
+    "expect_chip_id": "CC1101",
+    "rssi_floor_dbm": -110,
+    "rssi_ceiling_dbm": 10
+  },
+  "nfc": {
+    "expect_chip_id": "ST25R3916",
+    "field_min_amplitude": 1
+  },
+  "ir": {
+    "loopback_min_match_ratio": 0.75
+  },
+  "gpio": {
+    "loopback_expected": true
+  }
+}

@@ -1,0 +1,7 @@
+# Runtime for the portable diagnostic core, fault simulator, tests, and eval.
+# The core (flipdoctor/, sim/) uses only the Python standard library, so the
+# simulator and evaluator run from a clean clone with nothing installed.
+#
+# These extras are only needed to (re)generate figures and run the test suite:
+matplotlib>=3.7   # charts + rendered report/certificate images (eval/, figures/)
+pytest>=7.0       # test suite (tests/)

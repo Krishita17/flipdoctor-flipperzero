@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+
+# ufbt / Flipper build artifacts
+.ufbt/
+dist/
+*.fap
+build/
+
+# OS
+.DS_Store
+
+# Note: figures/*.png and eval/metrics.json ARE committed (generated but
+# checked in so the README renders on a fresh clone). Regenerate with:
+#   python3 eval/run_eval.py && python3 figures/generate_figures.py

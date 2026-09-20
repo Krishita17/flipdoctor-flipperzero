@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use FlipDoctor, please cite it as below."
+title: "FlipDoctor — one-tap health & self-diagnostics for the Flipper Zero"
+abstract: >-
+  A one-tap self-diagnostics application for the Flipper Zero that tests each
+  hardware subsystem (sub-GHz radio, NFC/RFID coil, IR transmit/receive, GPIO,
+  SD card, battery, buttons/display) and produces an interpretable
+  pass/fail/warn/inconclusive health report with confidence levels, plain-
+  language guidance, a used-buyer verification mode, and baseline comparison.
+type: software
+version: 0.1.0
+date-released: "2026-09-19"
+license: MIT
+repository-code: "https://github.com/Krishita17/flipdoctor-flipperzero"
+authors:
+  - family-names: "Choksi"
+    given-names: "Krishita Sanjay"
+keywords:
+  - flipper-zero
+  - diagnostics
+  - hardware-testing
+  - self-test
+  - health-check
