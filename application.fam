@@ -4,7 +4,7 @@
 App(
     appid="flipdoctor",
     name="FlipDoctor",
-    apptype=FlipAppType.EXTERNAL,
+    apptype=FlipperAppType.EXTERNAL,
     entry_point="flipdoctor_app",
     stack_size=4 * 1024,
     fap_category="Tools",
