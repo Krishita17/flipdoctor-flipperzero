@@ -6,6 +6,7 @@
 
 #include <furi.h>
 #include <furi_hal_rtc.h>
+#include <datetime/datetime.h>
 #include <storage/storage.h>
 
 FdStatus fd_report_overall(const FdReport* report) {
@@ -30,11 +31,12 @@ const char* fd_report_overall_label(const FdReport* report) {
 
 void fd_report_finalize(FdReport* report) {
     /* Timestamp from RTC. */
-    FuriHalRtcDateTime dt;
+    DateTime dt;
     furi_hal_rtc_get_datetime(&dt);
     snprintf(
         report->timestamp, sizeof(report->timestamp), "%04u-%02u-%02u %02u:%02u",
-        dt.year, dt.month, dt.day, dt.hour, dt.minute);
+        (unsigned)dt.year, (unsigned)dt.month, (unsigned)dt.day, (unsigned)dt.hour,
+        (unsigned)dt.minute);
 
     /* Simple stable-ish report id from statuses + minute. */
     uint32_t h = 2166136261u;
