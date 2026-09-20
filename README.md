@@ -1,5 +1,8 @@
 # 🩺 FlipDoctor for Flipper Zero
 
+[![CI](https://github.com/Krishita17/flipdoctor-flipperzero/actions/workflows/ci.yml/badge.svg)](https://github.com/Krishita17/flipdoctor-flipperzero/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 **A one-tap health & self-diagnostics app for your Flipper Zero.**
 Run a full checkup — sub-GHz, NFC, IR, GPIO, SD, and battery — and get a plain-language pass / fail report. Perfect before buying used.
 
